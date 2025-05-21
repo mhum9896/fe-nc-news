@@ -11,7 +11,7 @@ export const ArticlesList = ({ articlesList}) => {
                 {articlesList.map((article) => {
                 return (
                      <div key={article.articles_id}>
-                        <Link to={`/article/${article.articles_id}`}>
+                        <Link to={`/article/${article.article_id}`}>
                         <h3>{article.title}</h3>
                         <p>{article.author}</p>
                         <p>Published: {article.created_at}</p>
