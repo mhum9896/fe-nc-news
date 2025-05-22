@@ -27,3 +27,19 @@ export const getCommentsByArticleId = (articleId) => {
         return data.comments
     })
 }
+
+export const incArticleVote = (articleId, incVote) => {
+  return newsApi
+    .patch(`/articles/${articleId}`, { inc_votes: incVote })
+    .then(({ data }) => {
+      return data.article;
+    })
+}
+
+export const decArticleVote = (articleId, decVote) => {
+  return newsApi
+    .patch(`/articles/${articleId}`, { inc_votes: decVote })
+    .then(({ data }) => {
+      return data.article;
+    })
+}
