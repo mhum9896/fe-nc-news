@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react"
 import { useParams } from "react-router-dom"
 import { getArticlesbyArticleId } from "../api"
+import { SeeCommentsButton } from './SeeCommentsButton.jsx'
 
 export const SingleArticleCard = () => {
     const {article_id} = useParams()
@@ -23,7 +24,7 @@ export const SingleArticleCard = () => {
                 <img src={article.article_img_url} alt={article.title} />)}</p>
             <p className="article-body">{article.body}</p>
             <p className="article-votes">Votes: {article.votes}</p>
-            <p className="article-comments">Comments: {}</p>
+            <SeeCommentsButton article_id={article_id} />
         </div>
         </>
     )
